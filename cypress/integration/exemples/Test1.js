@@ -15,7 +15,10 @@ describe('My First Test suit', () => {
 
     cy.get('@productLocator').find('.product').should('have.length', 4)
     cy.get(':nth-child(3) > .product-action > button').click()
-    cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click()
+    cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click().then(function()
+      {
+        console.log('abacate')
+      })
 
     
     cy.get('@productLocator').find('.product').each(($el, index, $list) => {
@@ -27,10 +30,16 @@ describe('My First Test suit', () => {
         cy.wrap($el).find('button').click()
       }
     })
+
+    //assert if logo text is correctly displayed
+    cy.get('.brand').should('have.text', 'GREENKART')
+
+    //to print in logs
     cy.get('.brand').then(function(logoelement)
     {
       cy.log(logoelement.text())
     })    
+    
     // const logo = cy.get('.brand')
 
   })
