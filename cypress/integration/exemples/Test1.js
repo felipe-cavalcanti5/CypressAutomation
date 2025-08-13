@@ -11,12 +11,14 @@ describe('My First Test suit', () => {
     cy.get('.product').should('have.length', 5)
     cy.get('.product:visible').should('have.length', 4)
 
-    cy.get('.products').find('.product').should('have.length', 4)
+    cy.get('.products').as('productLocator')
+
+    cy.get('@productLocator').find('.product').should('have.length', 4)
     cy.get(':nth-child(3) > .product-action > button').click()
-    cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
+    cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click()
 
     
-    cy.get('.products').find('.product').each(($el, index, $list) => {
+    cy.get('@productLocator').find('.product').each(($el, index, $list) => {
 
       const textVeg=$el.find('h4.product-name').text()
       if(textVeg.includes('Cashews'))
@@ -29,7 +31,7 @@ describe('My First Test suit', () => {
     {
       cy.log(logoelement.text())
     })    
-    const logo = cy.get('.brand')
+    // const logo = cy.get('.brand')
 
   })
 })
