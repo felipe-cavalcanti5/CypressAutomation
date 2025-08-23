@@ -1,0 +1,14 @@
+{
+  "merchant": "Becker Financeira",
+  "merchantId": "15946510-b39f-4d1a-8ed8-f9f2bebfaec0",
+  "processor": "PCH",
+  "file": "PCH/2025/07/09/becker/processados/CARTAOBECKER10062025.zip",
+  "bucket": "elevaty-invoice-processor-hml",
+  "url": "elevaty-invoice-processor-hml/PCH/2025/07/09/becker/processados/CARTAOBECKER10062025.zip",
+  "fileSize" : "0",
+  "reprocessing": false,
+  "sendingChannels": { "email": false, "sms": false, "whatsapp": false },
+  "origin": "ELEVATY",
+  "extraCharge": false
+}
+
